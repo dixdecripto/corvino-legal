@@ -14,11 +14,12 @@ nav a{position:relative;padding-bottom:4px}nav a::after{content:"";position:abso
 .menu{display:none}
 /* hero */
 .hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;isolation:isolate}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.08);will-change:transform;filter:brightness(.62) saturate(.8)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.08);will-change:transform;filter:brightness(.62) saturate(.8)}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,0) 40%,rgba(12,21,38,.95) 100%)}
 .hero .wrap{padding-block:0 clamp(48px,8vh,96px)}
-.hero h1{margin:0;font-weight:800;font-size:clamp(3rem,9.5vw,9.5rem);line-height:.92;letter-spacing:-.04em;text-transform:uppercase}
-.hero h1 span{display:block}.hero h1 .thin{font-weight:300;letter-spacing:-.02em}
+.hero h1{margin:0;width:min(100%,clamp(300px,64vw,860px));display:grid;justify-items:center;gap:clamp(10px,1.6vw,22px)}
+.hero h1 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.hero h1 img{display:block;height:auto}.hero h1 .thin img{width:69.1%}.hero h1 span:nth-child(3) img{width:100%}
 .hero .sub{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-top:34px;flex-wrap:wrap}
 .hero .sub p{margin:0;max-width:44ch;color:#d6d3cc;font-size:1.05rem}
 .hero .sub small{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:#d6d3cc}
@@ -58,7 +59,7 @@ nav a{position:relative;padding-bottom:4px}nav a::after{content:"";position:abso
 .card p{margin:16px 0 0;color:#cfccc4;max-width:40ch;font-size:.98rem}
 .card .go{position:absolute;top:28px;left:32px;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:600}
 .card[data-ini]::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,21,38,.15) 30%,rgba(12,21,38,.92));z-index:0}.card>*{position:relative;z-index:1}.card::before{z-index:1}
-.card[data-ini="UC"]{background:url(img/finta-umberto.jpg) center 20%/cover}.card[data-ini="AC"]{background:url(img/finta-aldo.jpg) 75% 20%/cover}.card[data-ini="ES"]{background:url(img/finta-emanuela.jpg) center 15%/cover}
+.card[data-ini="UC"]{background:url(img/umberto-corvino.jpg) 55% 25%/cover}.card[data-ini="AC"]{background:url(img/aldo-corvino.jpg) 50% 20%/cover}.card[data-ini="ES"]{background:url(img/emanuela-santoro.jpg) 45% 25%/cover}
 /* sede */
 .sede{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding-block:clamp(80px,12vh,140px);border-top:1px solid var(--line);align-items:center}
 .sede h2{margin:14px 0 24px;font-weight:800;font-size:clamp(2.2rem,5vw,4.4rem);line-height:.95;letter-spacing:-.04em}
@@ -69,8 +70,8 @@ nav a{position:relative;padding-bottom:4px}nav a::after{content:"";position:abso
 footer{border-top:1px solid var(--line);padding-block:40px;font-size:.84rem;color:var(--mute)}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 /* motion: maschere, filetti, tenda, contatori */
-.hero h1 span{display:block;overflow:hidden}.hero h1 span>i{display:block;font-style:inherit;transform:translateY(110%);animation:rise 1.1s cubic-bezier(.2,.8,.2,1) forwards}
-.hero h1 span:nth-child(2)>i{animation-delay:.12s}.hero .sub{opacity:0;animation:fade 1s .7s ease forwards}
+.hero h1 span{display:block;overflow:hidden;width:100%;text-align:center}.hero h1 span>i{display:grid;justify-items:center;font-style:inherit;transform:translateY(110%);animation:rise 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(3)>i{animation-delay:.12s}.hero .sub{opacity:0;animation:fade 1s .7s ease forwards}
 @keyframes rise{to{transform:none}}@keyframes fade{to{opacity:1}}
 .r{opacity:0;transition:opacity .8s ease}.r.in{opacity:1}
 h2.w,.statement p{clip-path:inset(0 100% 0 0);transition:clip-path 1.1s cubic-bezier(.2,.8,.2,1)}.in h2.w,.in.statement p,h2.w.in{clip-path:inset(0 0 0 0)}
@@ -107,7 +108,7 @@ header.solid{mix-blend-mode:normal;background:linear-gradient(rgba(12,21,38,.9),
 </style></head><body>
 <header><div class="wrap"><a class="logo" href="index.html"><img src="img/logo-orizzontale-bianco.svg" alt="Studio Legale Corvino – Avvocati Associati" style="height:46px;width:auto"></a><nav><a href="index.html">Lo studio</a><a href="aree-di-attivita.html">Aree di attività</a><a href="professionisti.html">Professionisti</a><a href="info-e-novita.html">Info e novità</a><a href="sede.html">Sede</a></nav><span class="menu">Menu</span></div></header>
 <section class="hero"><img id="heroimg" src="img/galleria.jpg" alt="">
-<div class="wrap"><h1><span class="thin"><i>Studio Legale</i></span><span><i>Corvino</i></span></h1>
+<div class="wrap"><h1><span class="sr">Studio Legale Corvino</span><span class="thin"><i><img src="img/marchio-studio-legale.svg" alt="" width="159" height="12"></i></span><span><i><img src="img/marchio-corvino.svg" alt="" width="230" height="37"></i></span></h1>
 <div class="sub"><p>Avvocati associati a Napoli dal 1982. Diritto civile e commerciale, fino alla Corte di Cassazione.</p><small>Via Vittoria Colonna 14 · Napoli</small></div></div><div class="scroll"></div></section>
 
 <section class="statement wrap r"><p>Assistiamo <b>imprese, enti e privati</b> da oltre quarant’anni. <em>Una storia di famiglia.</em></p></section>
