@@ -57,6 +57,8 @@ nav a{position:relative;padding-bottom:4px}nav a::after{content:"";position:abso
 .card b{display:block;font-weight:800;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:-.03em;line-height:1}.card small{display:block;margin-top:10px;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
 .card p{margin:16px 0 0;color:#cfccc4;max-width:40ch;font-size:.98rem}
 .card .go{position:absolute;top:28px;left:32px;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:600}
+.card[data-ini]::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,21,38,.15) 30%,rgba(12,21,38,.92));z-index:0}.card>*{position:relative;z-index:1}.card::before{z-index:1}
+.card[data-ini="UC"]{background:url(img/finta-umberto.jpg) center 20%/cover}.card[data-ini="AC"]{background:url(img/finta-aldo.jpg) 75% 20%/cover}.card[data-ini="ES"]{background:url(img/finta-emanuela.jpg) center 15%/cover}
 /* sede */
 .sede{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding-block:clamp(80px,12vh,140px);border-top:1px solid var(--line);align-items:center}
 .sede h2{margin:14px 0 24px;font-weight:800;font-size:clamp(2.2rem,5vw,4.4rem);line-height:.95;letter-spacing:-.04em}
@@ -108,7 +110,7 @@ header.solid{mix-blend-mode:normal;background:linear-gradient(rgba(12,21,38,.9),
 <section class="people wrap"><div class="grid" style="margin-top:0"><a class="card" href="umberto-corvino.html" data-ini="UC"><span class="go">Profilo →</span><div><b>Umberto Corvino</b><small>Avvocato · socio fondatore</small><p>u.corvino@corvino.legal</p></div></a>
 <a class="card" href="aldo-corvino.html" data-ini="AC"><span class="go">Profilo →</span><div><b>Aldo Corvino</b><small>Avvocato · socio fondatore</small><p>a.corvino@corvino.legal</p></div></a>
 <div class="card r" data-ini="ES"><div><b>Emanuela Santoro</b><small>Avvocato</small><p>e.santoro@corvino.legal</p></div></div></div>
-<p class="note">Ritratti: servono le foto dei professionisti dallo studio; le schede mostrano le iniziali finché non arrivano.</p></section>
+<p class="note">Foto di prova (stock Pexels): da sostituire con i ritratti dello studio.</p></section>
 <footer><div class="wrap" style="align-items:center"><img src="img/logo-verticale-bianco.svg" alt="Studio Legale Corvino" style="height:64px;width:auto"><span>Studio Legale Corvino – Avvocati Associati · Via Vittoria Colonna 14, 80121 Napoli · P.IVA 08271421219</span><span><a href="privacy.html">Privacy policy</a> · <a href="cookie.html">Cookie policy</a></span></div></footer>
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;t.classList.add('in');io.unobserve(t);

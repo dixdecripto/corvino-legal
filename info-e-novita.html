@@ -57,6 +57,8 @@ nav a{position:relative;padding-bottom:4px}nav a::after{content:"";position:abso
 .card b{display:block;font-weight:800;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:-.03em;line-height:1}.card small{display:block;margin-top:10px;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
 .card p{margin:16px 0 0;color:#cfccc4;max-width:40ch;font-size:.98rem}
 .card .go{position:absolute;top:28px;left:32px;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:600}
+.card[data-ini]::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,21,38,.15) 30%,rgba(12,21,38,.92));z-index:0}.card>*{position:relative;z-index:1}.card::before{z-index:1}
+.card[data-ini="UC"]{background:url(img/finta-umberto.jpg) center 20%/cover}.card[data-ini="AC"]{background:url(img/finta-aldo.jpg) 75% 20%/cover}.card[data-ini="ES"]{background:url(img/finta-emanuela.jpg) center 15%/cover}
 /* sede */
 .sede{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding-block:clamp(80px,12vh,140px);border-top:1px solid var(--line);align-items:center}
 .sede h2{margin:14px 0 24px;font-weight:800;font-size:clamp(2.2rem,5vw,4.4rem);line-height:.95;letter-spacing:-.04em}
